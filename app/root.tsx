@@ -1,5 +1,6 @@
 import stylesheet from "~/tailwind.css";
-import type { LinksFunction } from "@remix-run/node";
+import { cssBundleHref } from "@remix-run/css-bundle";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -10,8 +11,16 @@ import {
 } from "@remix-run/react";
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: stylesheet }
+  { rel: "stylesheet", href: stylesheet },
+   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Highlight App" },
+    { name: "description", content: "Welcome to Highlight! This web app is for reflecting on and sharing your day" },
+  ];
+};
 
 export default function App() {
   return (
@@ -22,7 +31,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="font-Josefin">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
