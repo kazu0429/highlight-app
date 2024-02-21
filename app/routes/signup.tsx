@@ -18,14 +18,14 @@ export default function Signup() {
                 <Form>
                     <div className="flex flex-col gap-y-2">
                         <label htmlFor="username">Username</label>
-                        <input name="username" type="text" className="p-1 border border-zinc-600 rounded-lg"></input>
+                        <input id="username" name="username" type="text" className="p-1 border border-zinc-600 rounded-lg"></input>
                         <label htmlFor="email">Email</label>
-                        <input name="email" type="text" className="p-1 border border-zinc-600 rounded-lg"></input>
+                        <input id="email" name="email" type="text" className="p-1 border border-zinc-600 rounded-lg"></input>
                         <label htmlFor="password">Password</label>
-                        <input name="password" type="password" className="p-1 border border-zinc-600 rounded-lg"></input>
+                        <input id="password" name="password" type="password" className="p-1 border border-zinc-600 rounded-lg"></input>
                     </div>
                     <div className="mt-12">
-                        <button className="w-48 text-lg border-2 rounded-xl border-cb-start font-bold text-white bg-gradient-to-l from-cb-start to-cb-end">SIGNUP</button>
+                        <button className="w-48 text-lg border-2 rounded-xl border-cb-start font-bold text-white bg-gradient-to-l from-cb-start to-cb-end" type="button">SIGNUP</button>
                     </div>
                 </Form>
             </div>
