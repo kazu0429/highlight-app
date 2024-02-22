@@ -1,24 +1,14 @@
-import LogoImage from "~/images/Sun-Cloud.png"
-import UserIcon from "~/images/Usericon.png"
 import HomeIcon from "~/images/Home.png"
 import { Link, Outlet } from "@remix-run/react";
-
+import Header from "./home.header";
 
 export default function Home(){
 
     return (
         <div>
-            <header className="mt-3 flex items-center justify-between gap-x-3">
-                <div className="ml-4 flex flex-row items-center gap-x-2">
-                    <Link to="/">
-                        <img src={LogoImage} alt="Highlight logo" />
-                    </Link>
-                    <span className="mt-1 text-2xl font-">Highlight</span>
-                </div>
-                <div className="mr-4">
-                    <img src={UserIcon} alt="usericon" />
-                </div>
-            </header>
+            <div>  
+                <Header/>
+            </div>
             <div className="flex flex-col items-center">
                 <span className="mt-10 text-2xl">
                     HOME

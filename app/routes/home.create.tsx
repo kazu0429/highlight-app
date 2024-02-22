@@ -15,7 +15,6 @@ export default function CreateRoomModal(){
 
         const handleClick = (event:MouseEvent) => {
             if(!ref.contains(event.target as Node)){
-                document.body.style.overflow = '';
                 navigate(-1);
             }
         }
