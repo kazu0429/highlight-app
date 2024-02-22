@@ -1,6 +1,14 @@
 import LogoImage from "../images/Sun-Cloud.png"
-
+import { ActionFunctionArgs, redirect } from "@remix-run/node"
 import { Form, Link } from "@remix-run/react"
+
+export async function action({request}:ActionFunctionArgs){
+    const body = await request.formData();
+    const name = body.get("username")
+    const email = body.get("email")
+    console.log(name, email)
+    return redirect("/home");
+}
 
 export default function Signup() {
     return (
@@ -15,7 +23,7 @@ export default function Signup() {
                 <span className="mt-20 text-3xl">SIGNUP</span>
             </div>
             <div className="mt-20 flex justify-center">
-                <Form>
+                <Form method="post" action="/signup">
                     <div className="flex flex-col gap-y-2">
                         <label htmlFor="username">Username</label>
                         <input id="username" name="username" type="text" className="p-1 border border-zinc-600 rounded-lg"></input>
@@ -25,7 +33,7 @@ export default function Signup() {
                         <input id="password" name="password" type="password" className="p-1 border border-zinc-600 rounded-lg"></input>
                     </div>
                     <div className="mt-12">
-                        <button className="w-48 text-lg border-2 rounded-xl border-cb-start font-bold text-white bg-gradient-to-l from-cb-start to-cb-end" type="button">SIGNUP</button>
+                        <button className="w-48 text-lg border-2 rounded-xl border-cb-start font-bold text-white bg-gradient-to-l from-cb-start to-cb-end" type="submit">SIGNUP</button>
                     </div>
                 </Form>
             </div>
