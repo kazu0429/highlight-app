@@ -32,7 +32,7 @@ export default function RoomOut() {
             document.removeEventListener("click", handleClick);
         };
 
-    }, [])
+    }, [navigate])
 
     return (
         <div className="fixed top-0 right-0 h-screen w-full flex items-center justify-center bg-gray-500/30">
